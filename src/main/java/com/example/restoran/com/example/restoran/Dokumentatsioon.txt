@@ -5,3 +5,4 @@ keeltemudelitelt. Muidu mulle meeldis see ülesanne ning huvitav oli seda lahend
 Kõige suurem probleem oli alguses Springbooti ja intellij koostöö, sest ilmnes viga
 dependencytega, kuid selle lahenduseks ei leidnud päris pikka aega lahendust. Lõpuks
 leidsin ühest foorumist lugedes, et <scope>test</scope> oli vaja eemaldada.
+Ülesande lahendamiseks kulus umbkaudu 3 päeva.
