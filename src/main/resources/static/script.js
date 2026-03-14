@@ -19,7 +19,13 @@ const lauad = [
     {id : 18, kohad : 2, tsoon : ["terrass"], x : 210, y : 231},
     {id : 19, kohad : 4, tsoon : ["terrass"], x : 138, y : 231},
     {id : 20, kohad : 4, tsoon : ["terrass"], x : 53, y : 235},
-
-
-
 ]
+
+const lauad2 = document.querySelectorAll('.laud, .laud-ring');
+
+lauad2.forEach(l => {
+    l.addEventListener('click', () => {
+        l.classList.toggle('valitud');
+        console.log('Valitud laud:', l.dataset.laud);
+    });
+});

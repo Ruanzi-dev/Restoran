@@ -1,0 +1,8 @@
+.laud, .laud-ring {
+    background-color: rgba(0,255,0,0);
+    cursor: pointer;
+}
+
+.laud.valitud, .laud-ring.valitud{
+    background-color: rgba(0,255,0,0.5) ;
+}
