@@ -1,8 +1,33 @@
-.laud, .laud-ring {
+.ruut {
     background-color: rgba(0,255,0,0);
     cursor: pointer;
 }
 
-.laud.valitud, .laud-ring.valitud{
-    background-color: rgba(0,255,0,0.5) ;
+.ruut.valitud {
+    background-color: rgba(0,255,0,0.5);
+}
+
+.ruut.kinni {
+    background-color: rgba(255,0,0,0.5);
+    cursor: not-allowed;
+}
+
+.ring {
+    background-color: rgba(0,255,0,0);
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.ring.valitud {
+    background-color: rgba(0,255,0,0.5);
+}
+
+.ring.kinni {
+    background-color: rgba(255,0,0,0.5);
+    cursor: not-allowed;
+}
+
+/* kõik dünaamilised lauad */
+.dünaamiline {
+    position: absolute;
 }

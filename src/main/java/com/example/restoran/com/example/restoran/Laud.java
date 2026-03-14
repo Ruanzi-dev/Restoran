@@ -1,28 +1,32 @@
 package com.example.restoran;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import java.util.List;
 
+@Setter
+@Getter
 public class Laud {
     private int id;
     private int kohad;
     private List<String> tsoon;
+    private int x;
+    private int y;
+    private int width;
+    private int height;
+    private String kujund;
 
-    public Laud(int id, int kohad, List<String> tsoon) {
+    public Laud(int id, int kohad, List<String> tsoon, int x, int y, int width, int height, String kujund) {
+
         this.id = id;
         this.kohad = kohad;
         this.tsoon = tsoon;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public int getKohad() {
-        return kohad;
-    }
-
-    public List<String> getTsoon() {
-        return tsoon;
+        this.x = x;
+        this.y = y;
+        this.width = width;
+        this.height = height;
+        this.kujund = kujund;
     }
 
 }
