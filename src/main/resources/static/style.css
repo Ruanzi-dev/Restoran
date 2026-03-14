@@ -1,20 +1,20 @@
 .ruut {
-    background-color: rgba(0,255,0,0);
+    background-color: rgba(0,255,0,0); /* roheline värv aga läbipaistev hetkel */
     cursor: pointer;
 }
 
 .ruut.valitud {
-    background-color: rgba(0,255,0,0.5);
+    background-color: rgba(0,255,0,0.5); /*roheline värv tuleb välja kui kujund on soovitatud */
 }
 
 .ruut.kinni {
-    background-color: rgba(255,0,0,0.5);
-    cursor: not-allowed;
+    background-color: rgba(255,0,0,0.5); /* punane värv, sest ruudukujuline laud kinni */
+    cursor: not-allowed; /* hiirekursor pole lubatud */
 }
 
 .ring {
     background-color: rgba(0,255,0,0);
-    border-radius: 50%;
+    border-radius: 50%; /* muudab kujundi ringiks */
     cursor: pointer;
 }
 
@@ -27,7 +27,7 @@
     cursor: not-allowed;
 }
 
-/* kõik dünaamilised lauad */
+
 .dünaamiline {
     position: absolute;
 }

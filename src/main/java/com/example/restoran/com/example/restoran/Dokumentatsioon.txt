@@ -1,0 +1,7 @@
+Dokumentatsioon:
+Java keeles backendi kirjutamine oli lihtsam kui Service'i ja Controller'i klassiga.
+Kui java suutsin enamasti ise koodida, siis teiste osade valmis kirjutamisega läks aega ning küsisin suhteliselt tihti abi
+keeltemudelitelt. Muidu mulle meeldis see ülesanne ning huvitav oli seda lahendada.
+Kõige suurem probleem oli alguses Springbooti ja intellij koostöö, sest ilmnes viga
+dependencytega, kuid selle lahenduseks ei leidnud päris pikka aega lahendust. Lõpuks
+leidsin ühest foorumist lugedes, et <scope>test</scope> oli vaja eemaldada.

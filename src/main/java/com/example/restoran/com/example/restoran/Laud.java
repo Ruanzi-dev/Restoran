@@ -7,6 +7,10 @@ import java.util.List;
 
 @Setter
 @Getter
+/*
+Laudade jaoks klass, mille järgi saab isendeid luua.
+ */
+
 public class Laud {
     private int id;
     private int kohad;

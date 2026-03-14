@@ -9,7 +9,9 @@ import java.util.ArrayList;
 import java.util.Map;
 import java.util.Objects;
 
-
+/**
+ *Siin osas kasutasin keeltemudelite abi
+ */
 @RestController
 @RequestMapping("/api")
 public class LaudController {
@@ -22,11 +24,13 @@ public class LaudController {
     @GetMapping("/soovitatavad-lauad")
     public Map<String, Object> Leialaud(
             @RequestParam int inimesed,
-            @RequestParam(required = false, defaultValue = "") String tsoon) {
+            @RequestParam(required = false, defaultValue = "") String tsoon,
+            @RequestParam(required = false) String kuupaev,
+                    @RequestParam(required = false) String kellaaeg) {
 
-        ArrayList<Laud> kinni = laudservice.genereeri_kinnisedlauad();
+        ArrayList<Laud> kinni = laudservice.genereeri_kinnisedlauad(kuupaev, kellaaeg);
 
-        ArrayList<Laud> sobivad = laudservice.soovita_lauad(inimesed, kinni, tsoon);
+        ArrayList<Laud> sobivad = laudservice.soovita_lauad(inimesed, kinni, tsoon,kuupaev,kellaaeg);
         return Map.of("kinni", kinni, "sobivad", sobivad);
     }
 

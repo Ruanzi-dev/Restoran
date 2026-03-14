@@ -1,10 +1,16 @@
+/*
+Siit kõik java keelega meetodid suutsin ise luua. Kui hätta jäin proovisin leida abi googeldamisega.
+ */
+
 package com.example.restoran;
 
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * Siia lisasin kõik lauad ning, kus nad pildi peal paiknevad. Lihtsamaks järjestuseks lisasin id-numbrid.
+ */
 @Service
 public class Laudservice {
     List<Laud> lauad = List.of(
@@ -32,10 +38,20 @@ public class Laudservice {
 
 
 
-    public ArrayList<Laud> genereeri_kinnisedlauad() {
+    /**
+     * Genereerib lauad suvaliselt. Suvaline arv laudu ja suvalised lauad.
+     * @param kuupaev
+     * @param kellaaeg
+     * @return hõivatud laudade massiivi
+     * fori tsükkel käib kuni suvalise numbrini.
+     * suvaline number genereeritakse math.randomiga.
+     * kui laua id on võrdne suvalise numbriga ja laud pole hõivatud laua massiivis, siis lauid lisatakse sinna.
+     */
+
+    public ArrayList<Laud> genereeri_kinnisedlauad(String kuupaev, String kellaaeg) {
         ArrayList<Laud> hoivatud = new ArrayList<>();
-        for (int i = 0; i < (int) (Math.random() * 21) + 1; i++) {
-            int suvaline_number = (int) (Math.random() * 21) + 1;
+        for (int i = 0; i < (int) (Math.random() * lauad.size()); i++) {
+            int suvaline_number = (int) (Math.random() * lauad.size()) + 1;
             for (Laud hoivatud_laud : lauad) {
                 if (hoivatud_laud.getId() == suvaline_number && !hoivatud.contains(hoivatud_laud)) {
                     hoivatud.add(hoivatud_laud);
@@ -45,8 +61,19 @@ public class Laudservice {
         return hoivatud;
     }
 
+    /**
+     * soovitab laudu, mis on vabad veel ning mis sobivad kasutaja sisenditega kokku.
+     * @param hoivatud
+     * @param inimesed
+     * @param kellaaeg
+     * @param kuupaev
+     * @param tsoon
+     * kui laua id on hoivatud laua massiivis, siis tõeväärtus muudetakse tõeseks.
+     * kui laual on kohti sama palju kui inimesi on soovitud või kohti on rohkem kui inimesi,
+     * ja kui tsoon on jäetud tühjaks või tsoon kattub kasutaja sooviga, siis salvestatakse see sobivate laudade massiivi.
+     */
 
-    public ArrayList<Laud> soovita_lauad(int inimesed, ArrayList<Laud> hoivatud, String tsoon) {
+    public ArrayList<Laud> soovita_lauad(int inimesed, ArrayList<Laud> hoivatud, String tsoon, String kuupaev, String kellaaeg) {
         ArrayList<Laud> sobivad = new ArrayList<>();
         for (Laud potenstiaalne_laud : lauad) {
             boolean kasonkinni = false;
